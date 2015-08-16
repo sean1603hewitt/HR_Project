@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  start_date: 2015-08-15
+  end_date: 2015-08-15
+  Special_Circumstances: MyText
+  approved: false
+  Reasons_for_Refusal: MyText
+
+two:
+  name: MyString
+  email: MyString
+  start_date: 2015-08-15
+  end_date: 2015-08-15
+  Special_Circumstances: MyText
+  approved: false
+  Reasons_for_Refusal: MyText

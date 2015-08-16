@@ -1,0 +1,44 @@
+<h1>Holiday Listings</h1>
+	<%= form_tag holidays_path, :method => 'get' do %>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search" %>
+	<% end %>
+	
+ 
+	<table>
+		<thead>
+
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Start date</th>
+				<th>End date</th>
+				<th>Special Circumstances</th>
+				<th>Approved by Management</th>
+				<th>Reasons for Refusal</th>
+				
+			</tr>
+		</thead>
+ 
+		<% @holidays.each do |holiday| %>
+		
+		<thead>
+
+			<tr>
+				<td><%= holiday.name %></td>
+				<td><%= holiday.email %></td>
+				<td><%= holiday.start_date %></td>
+				<td><%= holiday.end_date %></td>
+				<td><%= holiday.Special_Circumstances %></td>
+				<th><%= label_tag :approved %></th>
+				<td><%= holiday.Reasons_for_Refusal %></td>
+				<td><%= link_to 'Show', holiday_path(holiday) %></td>
+				<td><%= link_to 'Edit', edit_holiday_path(holiday) %></td>
+				<td><%= link_to 'Destroy', holiday_path(holiday), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				
+			
+			</tr>
+		</thead>
+		<% end %>
+	</table>
+	<%= link_to 'New holiday', new_holiday_path %>

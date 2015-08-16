@@ -6,7 +6,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :company
       t.string :url
 
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end

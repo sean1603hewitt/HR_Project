@@ -1,3 +1,4 @@
+<div class="heading"> 
  <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -12,29 +13,34 @@
     </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-		<li class="active"><%= link_to " Home: Forum-Page", root_path%><span class=sr-only"></span></a></li>
-        <li class="active"><%= link_to "Profiles", profiles_path%><span class=sr-only"></span></a></li>
-        <li class="active"><%= link_to "Jobs", resumes_path%><span class=sr-only"></span></a></li>
+		<li class="active"><%= link_to "Forum-Page", root_path%><span class=sr-only"></span></a></li>
+
+		    <%= render 'devise/menu/registration_items' %>
+            <%= render 'devise/menu/login_items' %>
+			
+		<li class="active"><span class=sr-only"></span></a></li>
+        <li class="active"><%= link_to "Profiles", profiles_path %><span class=sr-only"></span></a></li>
+        <li class="active"><%= link_to "Jobs", jobs_path %><span class=sr-only"></span></a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Holidays<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li class="active"><%= link_to "Holiday Listing", holidays_path %></li>
+            <li class="active"><td><%= link_to 'Holiday Request Form', new_holiday_path %></a></li>
           </ul>
         </li>
       </ul>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-		<li>
-			<div class="navbar-text">Current user email: <%= current_user_email%></div>
+		<li><div class="navbar-text">
+		<% if user_signed_in? %>
+			Current user: <%= current_user.email%>. Not You?
+			<%= link_to "Sign out", destroy_user_session_path %> 
+		<% else %>
+			<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
+		<% end %></div>
         <li><form><a href="#"><a href="#" class="btn btn-success navbar-btn btn-sm" data-toggle="modal" data-target="#new-question-Modal">Start a Topic</a></form></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>
+ </nav>

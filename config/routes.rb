@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  
+  root :to =>'home#index'
   get 'resumes/index'
 
   get 'resumes/new'
@@ -7,19 +10,39 @@ Rails.application.routes.draw do
   get 'resumes/create'
 
   get 'resumes/destroy'
-
-  resources :resumes, only: [:index, :new, :create, :destroy]
+  resources :searches
+  resources :holidays
+  resources :profiles
+  resources :resumes
 
   resources :answers
   resources :questions
 
+
   resources :jobs
+  
+  get '/profiles' => 'profiles#index'
 
-  get '/jobs/index' => 'jobs#index'
+  scope :jobs do
+  get '/jobs' => 'jobs#index'
+  post '/jobs' => 'jobs#create'
+  get '/jobs/:id/edit' => 'jobs#edit'
+  get '/jobs/:id' => 'jobs#destroy'
+  
+  end
 
-  root 'home#index'
- 
-  get 'profiles' => 'home#profiles'
+
+
+  
+  scope :devise do
+  get 'users/sign_in' => 'devise/sessions#create'
+  get 'users/sign_in' => 'devise/sessions#new'
+  get 'users' => 'devise/registrations#create'
+  get 'users/sign_up' => 'devise/registrations#new'
+  end
+	
+
+
   
   get '/questions' => 'questions#index'
   

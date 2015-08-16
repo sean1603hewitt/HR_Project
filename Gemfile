@@ -30,9 +30,11 @@ gem 'haml', '~> 4.0.6'
 # Use Unicorn as the app server
 # gem 'unicorn'
  gem 'carrierwave', '~> 0.9'
- gem 'bootstrap-sass', '~> 3.3.5.1'
+ #gem 'bootstrap-sass', '~> 3.3.5.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+#gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

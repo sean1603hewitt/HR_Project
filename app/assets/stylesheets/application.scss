@@ -14,5 +14,58 @@
  *= require_self
  */
  
- @import "bootstrap-sprockets";
- @import "bootstrap";
+
+
+ * {
+	box-sizing: border-box;
+}
+.navbar {
+	margin-bottom: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+  background: -webkit-linear-gradient(90deg, #e4e4e4 40%, #a3a3a3 60%);
+  background:    -moz-linear-gradient(90deg, #e4e4e4 40%, #a3a3a3 60%);
+  background:     -ms-linear-gradient(90deg, #e4e4e4 40%, #a3a3a3 60%);
+  background:      -o-linear-gradient(90deg, #e4e4e4 40%, #a3a3a3 60%);
+  background:         linear-gradient(90deg, #e4e4e4 40%, #a3a3a3 60%);
+  font-family: 'Lato', sans-serif;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+#jobs {
+	.job {
+		padding: 1em 0;
+		border-bottom: 1px solid #6e6e6e;
+		h2 {
+			font-size: 2.5em;
+			font-weight: 300;
+			margin-bottom: 0;
+			color: #6e6e6e;
+			a {
+				color: #6e6e6e;
+			}
+		}
+		p {
+			color: #738787;
+		}
+	}
+}
+
+#links {
+	margin-top: 2em;
+	color: white;
+}
