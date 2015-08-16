@@ -23,7 +23,7 @@ test:
 production:
   adapter: postgresql
   database: production
-  username: seanhewitt1603
+  username: shewitt1603
   password: password
   host: localhost
 
