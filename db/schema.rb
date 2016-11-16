@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815211006) do
+ActiveRecord::Schema.define(version: 20150815135332) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20150815211006) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "holidays", force: :cascade do |t|
@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20150815211006) do
     t.date     "start_date"
     t.date     "end_date"
     t.text     "Special_Circumstances"
-    t.boolean  "approved",              default: true
+    t.boolean  "approved"
     t.text     "Reasons_for_Refusal"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20150815211006) do
     t.text     "description"
     t.string   "company"
     t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "category_id"
   end
 
@@ -67,15 +67,6 @@ ActiveRecord::Schema.define(version: 20150815211006) do
   create_table "resumes", force: :cascade do |t|
     t.string   "name"
     t.string   "attachment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "searches", force: :cascade do |t|
-    t.string   "keywords"
-    t.string   "email"
-    t.date     "start_date"
-    t.date     "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
